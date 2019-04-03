@@ -1747,7 +1747,7 @@ data:
                     serviceAccountName: build-controller
                     containers:
                       - name: knative-build-operator
-                        image: quay.io/jcrossley3/knative-build-operator:0.4.0
+                        image: quay.io/openshift-knative/knative-build-operator:v0.4.0
                         command:
                         - knative-build-operator
                         args:
@@ -2658,7 +2658,7 @@ data:
                     serviceAccountName: eventing-controller
                     containers:
                       - name: knative-eventing-operator
-                        image: quay.io/jcrossley3/knative-eventing-operator:0.4.1
+                        image: quay.io/openshift-knative/knative-eventing-operator:v0.4.1
                         command:
                         - knative-eventing-operator
                         args:
@@ -4327,7 +4327,7 @@ data:
                     serviceAccountName: controller
                     containers:
                       - name: knative-serving-operator
-                        image: quay.io/jcrossley3/knative-serving-operator:0.3.0
+                        image: quay.io/openshift-knative/knative-serving-operator:v0.3.0
                         command:
                         - knative-serving-operator
                         args:
@@ -4671,7 +4671,7 @@ data:
                     serviceAccountName: controller
                     containers:
                       - name: knative-serving-operator
-                        image: quay.io/jcrossley3/knative-serving-operator:0.4.1
+                        image: quay.io/openshift-knative/knative-serving-operator:v0.4.1
                         command:
                         - knative-serving-operator
                         args:
