@@ -184,7 +184,8 @@ function install_catalogsources {
   local OLM_NS=$(olm_namespace)
   $CMD apply -n "$OLM_NS" -f https://raw.githubusercontent.com/openshift/knative-serving/release-${KNATIVE_SERVING_VERSION}/openshift/olm/knative-serving.catalogsource.yaml
   $CMD apply -n "$OLM_NS" -f https://raw.githubusercontent.com/openshift/knative-build/release-${KNATIVE_BUILD_VERSION}/openshift/olm/knative-build.catalogsource.yaml
-  $CMD apply -n "$OLM_NS" -f https://raw.githubusercontent.com/openshift/knative-eventing/release-${KNATIVE_EVENTING_VERSION}/openshift/olm/knative-eventing.catalogsource.yaml
+#  $CMD apply -n "$OLM_NS" -f https://raw.githubusercontent.com/openshift/knative-eventing/release-${KNATIVE_EVENTING_VERSION}/openshift/olm/knative-eventing.catalogsource.yaml
+  $CMD apply -n "$OLM_NS" -f https://github.com/matzew/eventing/blob/broker_rbac_fixes/openshift/olm/knative-eventing.catalogsource.yaml
   $CMD apply -f "$ROOT_DIR/maistra-operators.catalogsource.yaml" -n "$OLM_NS"
   timeout 120 "$CMD get pods -n $OLM_NS | grep knative"
   timeout 120 "$CMD get pods -n $OLM_NS | grep maistra"
